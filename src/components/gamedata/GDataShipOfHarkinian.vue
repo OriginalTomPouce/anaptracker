@@ -22,8 +22,8 @@
             <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Inventory</div>
 
             <img v-if="getNumberItemsFromName('Kokiri Sword')" title="Kokiri Sword" src="/img/oot/22_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Kokiri Sword')  }" />
-            <img v-else title="Deku Sticks" src="/img/oot/47_1.png" :class="{ 'opacity-25': hasDekuSticks()  }" />
-            <img v-if="hasMasterSword()" title="Master Sword" src="/img/oot/23_2.png" :class="{ 'opacity-25': !hasMasterSword()  }" />
+            <img v-else title="Deku Sticks" src="/img/oot/47_1.png" :class="{ 'opacity-25': !hasDekuSticks()  }" />
+            <img v-if="hasMasterSword()" title="Master Sword" src="/img/oot/23_2.png" />
             <img v-else-if="1" title="Biggoron Sword" src="/img/oot/24_2.png" :class="{ 'opacity-25': !getNumberItemsFromName('Biggoron\'s Sword')  }" />
             <img v-else-if="!shuffleKnife()" title="Giant's Knife" src="/img/oot/24_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Giant Knife')   }" />
             <img v-if="getNumberItemsFromName('Mirror Shield')" title="Mirror Shield" src="/img/oot/27_1.png" />
@@ -345,7 +345,7 @@ export default {
                 if (this.data.slot_data.hasOwnProperty('triforce_hunt') && this.data.slot_data.triforce_hunt == 1) {
                     return this.data.slot_data.triforce_hunt_pieces_required;
                 }
-                return 0;
+                return this.getNumberItemsFromName('Triforce Piece');
             },
             stonesCounts: function () {
                 if (this.data.slot_data.hasOwnProperty('rainbow_bridge')) {
@@ -414,7 +414,7 @@ export default {
                 return res;
             }, 
             hasDekuSticks: function () {
-                if (this.data.slot_data.hasOwnProperty('shuffle_deku_stick_bag')) {
+                if (this.data.slot_data.hasOwnProperty('shuffle_deku_stick_bag') && this.data.slot_data.shuffle_deku_stick_bag) {
                     return this.getNumberItemsFromName('Progressive Stick Capacity');
                 }
                 return 1;

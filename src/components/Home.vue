@@ -69,8 +69,10 @@
 
                 if (fake_args.length > 1 && fake_args[fake_args.length - 2] == 'tracker')
                     method = 'tracker';
-                if (fake_args.length > 2 && fake_args[fake_args.length - 3] == 'ap.bananium.fr')
-                    webhost = 'bananium';
+                if (fake_args.length > 2)
+                    webhost = this.$parent.webhostValue(fake_args[fake_args.length - 3]).alias;
+
+
 
                 if (id.length == 22)
                     this.$parent.route(method, webhost, id);

@@ -99,10 +99,10 @@
     import GData from './gamedata/GData.vue';
     import { shallowRef } from 'vue'
     import LIST_OF_GAMES from "../listofgames.js";
-    
-    
-export default {
-  name: "playerSlot",
+
+
+    export default {
+        name: "playerSlot",
         props: {
             data: Object,
             gamedata: Object,
@@ -111,14 +111,14 @@ export default {
             total_checks: Number,
             player_name: String,
             player_game: String
-  },
-  data: function () {
-      return {
-          LIST_OF_GAMES,
-          mHover: 0,
-          compVar: shallowRef(GData),
-    };
-  },
+        },
+        data: function () {
+            return {
+                LIST_OF_GAMES,
+                mHover: 0,
+                compVar: shallowRef(GData),
+            };
+        },
 
         methods: {
             hoverOn: function () {
@@ -129,8 +129,8 @@ export default {
             },
             hasSlotData: function () {
                 if (Object.keys(this.data.slot_data).length) {
-                        return true;
-                    }
+                    return true;
+                }
                 return false;
             },
             supportedGame: function () {
@@ -270,7 +270,7 @@ export default {
                         return this.LIST_OF_GAMES[x].class;
                     }
                 }
-                
+
                 return GData;
             },
             get_game_data: function () {
@@ -330,7 +330,7 @@ export default {
                     return (Math.floor(time / (360)) / 10).toString() + 'H';
                 }
                 else if (time > 900) {
-                        return (Math.floor(time / (60))).toString() + 'm';
+                    return (Math.floor(time / (60))).toString() + 'm';
                 }
 
                 return '';
@@ -355,7 +355,7 @@ export default {
              * 5 : Entrance Label
              * 6 : Item classification
              * 7 : Hint classification (???, Non-important, Avoid, Important, Found)
-             * 
+             *
              */
             getImportantSentHints: function () {
                 var res = 0;
@@ -406,16 +406,14 @@ export default {
 
             },
             slotURL: function () {
-                var URL = "https://archipelago.gg";
-                if (this.$parent.$parent.WEBHOST_USED == 'bananium')
-                    URL = "https://ap.bananium.fr";
+                var linkURL = this.$parent.$parent.webhostValue(this.$parent.$parent.WEBHOST_USED).apurl;
 
-                URL += "/tracker/" + this.$parent.$parent.TRACKER_ID + "/0/" + this.data.id;
-                return URL;
+                linkURL += "/tracker/" + this.$parent.$parent.TRACKER_ID + "/0/" + this.data.id;
+                return linkURL;
             },
         },
         components: {
             GData
-  },
-};
+        },
+    };
 </script>

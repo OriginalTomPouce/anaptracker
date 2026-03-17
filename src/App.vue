@@ -26,6 +26,7 @@
     import ANAP_CONFIG from "./anapconfig.js";
     import axios from 'axios';
     import ANAP_DATA from "./anapdata.js";
+    import ANAP_WEBHOSTS from "./webhosts.js";
     import LIST_OF_GAMES from "./listofgames.js";
 
     var TRACKER_ID = '';
@@ -131,6 +132,7 @@
                 LIST_OF_GAMES,
                 OPTIONS,
                 WEBHOST_USED,
+                ANAP_WEBHOSTS,
                 DEFAULT_OPTIONS,
                 STORAGE_MASTER
             };
@@ -148,6 +150,16 @@
                 if (this.TRACKER_ID && this.GLOBAL_TRACKER_DATA.players.length > 0)
                     return true;
                 return false;
+            },
+            // Return if a webhost is recognized by returning it's object used for the API bridge.
+            webhostValue: function (name) {
+                for (const property in this.ANAP_WEBHOSTS) {
+                    if (name == property)
+                        return this.ANAP_WEBHOSTS[property];
+                }
+
+                // Default will always be archipelago.gg
+                return this.ANAP_WEBHOSTS['archipelago'];
             },
             // Checks if the tracker is ready to use (make sure most of the calls are loaded)
             trackerIsReady: function () {
@@ -197,8 +209,7 @@
                     return;
 
 
-                var TRACKER_URL = this.ANAP_DATA.archipelagogg.tracker_url + this.WEBHOST_USED + '/' + this.TRACKER_ID;
-
+                const TRACKER_URL = this.ANAP_DATA.archipelagogg.tracker_url + this.WEBHOST_USED + '/' + this.TRACKER_ID;
                 if (!ANAP_CONFIG.OFFLINE) {
                     axios
                         .get(TRACKER_URL)
@@ -518,7 +529,7 @@
              * Arg 2 : webhost
              *  Redirect the tracker data to a recognized webhost, otherwise, go to the 3rd argument
              * Arg 3 : ID of the room/tracker
-             * 
+             *
              * route is the first method to call when you load a new page !!!
              */
             route: function (arg1, arg2, arg3) {
@@ -534,14 +545,12 @@
 
                 // Webhost Selection
                 var webhost = null;
-                if (['archipelago', 'bananium'].includes(arg1)) {
-                    webhost = arg1;
-                    this.WEBHOST_USED = 'archipelago';
+                if (arg2 != null) {
+                    webhost = this.webhostValue(arg1).alias;
+                    this.WEBHOST_USED = webhost;
                     // Not shown on the URL if possible.
                     if (webhost == 'archipelago')
                         webhost = null;
-                    else
-                        this.WEBHOST_USED = webhost;
                 }
 
                 if (arg2 != null)
@@ -588,7 +597,7 @@
                 this.GLOBAL_TRACKER_DATA.groups = [];
                 this.GLOBAL_TRACKER_DATA.total_checks_done = 0;
                 this.GLOBAL_TRACKER_DATA.broken_slot_data = false;
-                this.GLOBAL_TRACKER_DATA.text_filter = ''; 
+                this.GLOBAL_TRACKER_DATA.text_filter = '';
                 this.ROOM_ID = '';
                 this.TRACKER_ID = '';
                 this.route('', null, null);

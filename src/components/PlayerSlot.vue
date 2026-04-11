@@ -1,9 +1,10 @@
-<template>
+﻿<template>
     <div v-if="displayable()" @mouseover="hoverOn()" @mouseleave="hoverOff()" :class=" { 'bg-cyan-200' : get_status() == 30, 'py-1' : $parent.$parent.OPTIONS.row_size == 1,  'text-sm py-1' : !$parent.$parent.OPTIONS.row_size, 'text-lg py-2' : $parent.$parent.OPTIONS.row_size == 2 }" class="relative inline-block w-full tracker-history leading-5 font-semibold font-xl h-full px-2 border-t-2 border-t-gray-900">
         <div :class="getSpeedBarClass()" class="absolute left-0 top-0 bottom-0 z-1" :style="{ 'width' : str_percent_completion() }"></div>
         <div v-if="mHover" class="absolute left-0 right-0 top-0 bottom-0 z-1 bg-gray-100/30"></div>
         <div @click="toggleExpand()" class="z-2 flex flex-column justify-between">
             <div class="w-1/4 lg:w-1/5 2xl:w-1/6 z-3 text-dark " :class="{ 'opacity-50' : get_status() == 0 }">
+                <span v-if="slotLocked()">🔒</span>
                 <a @click="toggleExpand()" :href="slotURL()" target="_blank" class="mr-2 font-bold hover:text-blue-800 hover:underline">
                     <span v-if="$parent.$parent.OPTIONS.show_slot_number" class="font-bold">{{ data.id }} - </span>{{ player_name }}
                 </a>
@@ -411,6 +412,11 @@
                 linkURL += "/tracker/" + this.$parent.$parent.TRACKER_ID + "/0/" + this.data.id;
                 return linkURL;
             },
+            slotLocked: function () {
+                if (this.$parent.getSlotLockCheck(this.data.name))
+                    return false;
+                return true;
+            }
         },
         components: {
             GData

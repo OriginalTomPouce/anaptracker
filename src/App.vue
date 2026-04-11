@@ -60,7 +60,8 @@
         broken_slot_data: false,
         timer_refresh: 10000,
         webhost: 'archipelago',
-        text_filter: ''
+        text_filter: '',
+        slotlock: 0
 
     };
     var DEFAULT_OPTIONS = {
@@ -244,6 +245,8 @@
                         }
                     }
                 }
+
+
                 this.getChainStaticData();
             },
             // Pus hthe slot_data_tracker API call result on the App
@@ -334,6 +337,8 @@
                 for (var x = 0; x < room_data.players.length; x++) {
                     index_player += 1;
                     this.GLOBAL_TRACKER_DATA.players.push(new PlayerStruct(index_player, room_data.players[x][0], room_data.players[x][1]));
+                    if (room_data.players[x][1] == 'SlotLock')
+                        GLOBAL_TRACKER_DATA.slotlock = index_player;
                 }
                 this.TRACKER_ID = room_data.tracker;
 
@@ -388,6 +393,9 @@
                 for (var x = 0; x < room_data.player_game.length; x++) {
                     index_player += 1;
                     GLOBAL_TRACKER_DATA.players.push(new PlayerStruct(index_player, 'Slot ' + room_data.player_game[x].player, room_data.player_game[x].game));
+                    if (room_data.player_game[x].game == 'SlotLock')
+                        GLOBAL_TRACKER_DATA.slotlock = index_player;
+
                 }
 
                 if (!this.validRoom())

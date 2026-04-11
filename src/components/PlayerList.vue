@@ -159,7 +159,25 @@
                 return '(??? from ' + player.name + ')';
 
             },
+            getSlotLockCheck: function (name) {
+                if (this.globaldata.slotlock == 0)
+                    return true;
 
+                console.log(this.globaldata.slotlock);
+                var needle = "Unlock " + name;
+                var needle_id = 0;
+                var player = this.getPlayerbyID(this.globaldata.slotlock);
+                var datapackage = this.gamedata[player.game];
+
+                if (datapackage.item_name_to_id[needle])
+                    needle_id = datapackage.item_name_to_id[needle];
+                for (var x = 0; x < player.tracker_data.player_items_received.length; x++) {
+                    if (player.tracker_data.player_items_received[x][0] == needle_id)
+                        return true;
+                }
+                return false;
+
+            },
         },
         components: {
             PlayerSlot,

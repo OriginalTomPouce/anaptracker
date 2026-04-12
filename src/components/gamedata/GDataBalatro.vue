@@ -144,9 +144,10 @@ export default {
                 return this.$parent.getNumberItemsFromCategory(name);
             },
             getJokerCards: function () {
+                var res = 0;
                 if (this.$parent.hasSlotData() && this.data.slot_data.jokerbundles.length > 0)
-                    return this.$parent.getNumberItemsNameStart('Joker Bundle') * this.data.slot_data.jokerbundles[0].length;
-                return this.getNumberItemsFromCategory('Joker');
+                    res += this.$parent.getNumberItemsNameStart('Joker Bundle') * this.data.slot_data.jokerbundles[0].length;
+                return res + this.getNumberItemsFromCategory('Joker');
             },
             getTarotCards: function () {
                 if (this.getNumberItemsFromName('Tarot Bundle'))

@@ -45,9 +45,9 @@
             <img title="Fierce Deity's Mask" src="/img/mm/masks/fierce_deity.png" :class="{ 'opacity-25': !getNumberItemsFromName('Fierce Deity\'s Mask')  }" />
             <img title="Kafei's Mask" src="/img/mm/masks/kafei_mask.png" :class="{ 'opacity-25': !getNumberItemsFromName('Kafei\'s Mask')  }" />
             <img title="Great Fairy Mask" src="/img/mm/masks/fairy_mask.png" :class="{ 'opacity-25': !getNumberItemsFromName('Great Fairy Mask')  }" />
+            <img title="Gibdo Mask" src="/img/mm/masks/captains.png" :class="{ 'opacity-25': !getNumberItemsFromName('Captain\'s Hat')  }" />
             <img title="Garo Mask" src="/img/mm/masks/garo_mask.png" :class="{ 'opacity-25': !getNumberItemsFromName('Garo Mask')  }" />
             <img title="Gibdo Mask" src="/img/mm/masks/gibdo.png" :class="{ 'opacity-25': !getNumberItemsFromName('Gibdo Mask')  }" />
-            <img title="Don Gero Mask" src="/img/mm/masks/don_gero.png" :class="{ 'opacity-25': !getNumberItemsFromName('Don Gero Mask')  }" />
         </div>
 
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
@@ -109,21 +109,21 @@ export default {
                 res.push(row_skultullas);
 
                 var dlcs = []; 
-                if (this.data.slot_data.keysanity)
+                if (this.data.slot_data.keysanity == 1)
                     dlcs.push('Small Keys');
-                if (this.data.slot_data.bosskeysanity)
+                if (this.data.slot_data.bosskeysanity == 1)
                     dlcs.push('Boss Keys');
-                if (this.data.slot_data.fairysanity)
+                if (this.data.slot_data.fairysanity == 1)
                     dlcs.push('Stray Fairies');
-                if (this.data.slot_data.skullsanity)
+                if (this.data.slot_data.skullsanity == 1)
                     dlcs.push('Skultullas Tokens');
-                if (this.data.slot_data.scrubsanity)
+                if (this.data.slot_data.scrubsanity == 1)
                     dlcs.push('Scrubs');
-                if (this.data.slot_data.cowsanity)
+                if (this.data.slot_data.cowsanity == 1)
                     dlcs.push('Cows');
                 if (this.data.slot_data.shopsanity > 1)
                     dlcs.push('Shops');
-                if (this.data.slot_data.curiostity_shop_trades)
+                if (this.data.slot_data.curiostity_shop_trades == 1)
                     dlcs.push('Shop Trades');
 
 

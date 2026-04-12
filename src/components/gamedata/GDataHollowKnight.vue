@@ -12,14 +12,20 @@
         <img v-else-if="siblingsGoal() && getNumberItemsFromName('King_Fragment')" title="King Fragment" src="/img/hollow_knight/Charm_KingSoul_Left.png" />
         <img v-else-if="siblingsGoal() && getNumberItemsFromName('Queen_Fragment')" title="Queen Fragment" src="/img/hollow_knight/Charm_KingSoul_Right.png" />
         <img v-else-if="siblingsGoal()" title="White Fragments" class="opacity-25" src="/img/hollow_knight/Kingsoul.png" />
-        <img v-if="radianceGoal()" title="Void Heart" src="/img/hollow_knight/VoidHeart.png" :class="{ 'opacity-25': !getNumberItemsFromName('Void_Heart')  }" />
+        <img v-if="siblingsGoal()" title="Void Heart" src="/img/hollow_knight/VoidHeart.png" :class="{ 'opacity-25': !getNumberItemsFromName('Void_Heart')  }" />
+        <span v-if="radianceGoal()">
+            <img v-if="dreamNailLevel() > 2" title="Awoken Dream Nail" src="/img/hollow_knight/DreamNail2.png" />
+            <img v-else-if="dreamNailLevel() > 1" title="Drema Nail & Dream Gate" src="/img/hollow_knight/DreamGate.png" />
+            <img v-else title="Dream Nail" src="/img/hollow_knight/DreamNail1.png" :class="{ 'opacity-25': !dreamNailLevel() }" />
+        </span>
     </div>
     <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
         <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Moveset</div>
-
-        <img v-if="dreamNailLevel() > 2" title="Awoken Dream Nail" src="/img/hollow_knight/DreamNail2.png" />
-        <img v-else-if="dreamNailLevel() > 1" title="Drema Nail & Dream Gate" src="/img/hollow_knight/DreamGate.png" />
-        <img v-else title="Dream Nail" src="/img/hollow_knight/DreamNail1.png" :class="{ 'opacity-25': !dreamNailLevel() }" />
+        <span v-if="!radianceGoal()">
+            <img v-if="dreamNailLevel() > 2" title="Awoken Dream Nail" src="/img/hollow_knight/DreamNail2.png" />
+            <img v-else-if="dreamNailLevel() > 1" title="Drema Nail & Dream Gate" src="/img/hollow_knight/DreamGate.png" />
+            <img v-else title="Dream Nail" src="/img/hollow_knight/DreamNail1.png" :class="{ 'opacity-25': !dreamNailLevel() }" />
+        </span>
 
         <!-- Left_Wing_Mowthing_Cloak and Right_Wing_Mowthing_Cloak -->
         <span v-if="splitCloak()">
@@ -189,13 +195,13 @@ export default {
                 return this.$parent.getNumberItemsFromGroup(['Dream_Nail', 'Dream_Gate', 'Awoken_Dream_Nail']);
             },
             siblingsGoal: function () {
-                if (this.data.slot_data.hasOwnProperty('options') && this.data.slot_data.options.Goal != 2) {
+                if (this.data.slot_data.hasOwnProperty('options') && ![2, 3, 4, 5].includes(this.data.slot_data.options.Goal)) {
                     return 0;
                 }
                 return 1;
             },
             radianceGoal: function () {
-                if (this.data.slot_data.hasOwnProperty('options') && ![2, 3, 4, 5].includes(this.data.slot_data.options.Goal)) {
+                if (this.data.slot_data.hasOwnProperty('options') && ![3, 4, 5].includes(this.data.slot_data.options.Goal)) {
                     return 0;
                 }
                 return 1;

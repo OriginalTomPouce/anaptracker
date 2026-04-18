@@ -26,6 +26,8 @@ import GDataSuperMetroid from './components/gamedata/GDataSuperMetroid.vue';
 import GDataMajorasMask from './components/gamedata/GDataMajorasMask.vue';
 import GDataTerraria from './components/gamedata/GDataTerraria.vue';
 import GDataTheMinishCap from './components/gamedata/GDataTheMinishCap.vue';
+import GDataTwilightPrincess from './components/gamedata/GDataTwilightPrincess.vue';
+
 import GDataHitmanWOA from './components/gamedata/GDataHitmanWOA.vue';
 
 var LIST_OF_GAMES = [
@@ -132,6 +134,10 @@ var LIST_OF_GAMES = [
     {
         'name': 'The Minish Cap',
         'class': GDataTheMinishCap
+    },
+    {
+        'name': 'Twilight Princess',
+        'class': GDataTwilightPrincess
     },
     {
         'name': 'Super Metroid',

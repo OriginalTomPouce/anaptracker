@@ -24,6 +24,7 @@ import GDataSuperMarioWorld from './components/gamedata/GDataSuperMarioWorld.vue
 import GDataSecretOfEvermore from './components/gamedata/GDataSecretOfEvermore.vue';
 import GDataSuperMetroid from './components/gamedata/GDataSuperMetroid.vue';
 import GDataMajorasMask from './components/gamedata/GDataMajorasMask.vue';
+import GDataTBOIRepentance from './components/gamedata/GDataTBOIRepentance.vue';
 import GDataTerraria from './components/gamedata/GDataTerraria.vue';
 import GDataTheMinishCap from './components/gamedata/GDataTheMinishCap.vue';
 import GDataTwilightPrincess from './components/gamedata/GDataTwilightPrincess.vue';
@@ -126,6 +127,10 @@ var LIST_OF_GAMES = [
     {
         'name': 'Ship of Harkinian',
         'class': GDataShipOfHarkinian
+    },
+    {
+        'name': 'The Binding of Isaac Repentance',
+        'class': GDataTBOIRepentance
     },
     {
         'name': 'Terraria',

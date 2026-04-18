@@ -61,7 +61,7 @@
             <img v-if="getNumberItemsFromName('Progressive Hookshot') > 1" title="Longshot" src="/img/oot/7_2.png" />
             <img v-else src="/img/oot/7_1.png" title="Hookshot" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Hookshot')  }" />
             <img title="Megaton Hammer" src="/img/oot/8_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Megaton Hammer')  }" />
-            <img title="Din's Fire'" src="/img/oot/12_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Din\'s Fire')  }" />
+            <img title="Din's Fire" src="/img/oot/12_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Din\'s Fire')  }" />
             <img v-if="getNumberItemsFromName('Bottle with Ruto\'s Letter')" title="Bottle with Letter" src="/img/oot/3_2.png" />
             <img v-else title="Bottle" src="/img/oot/3_1.png" :class="{ 'opacity-25': !hasBottle()  }" />
         </div>

@@ -13,8 +13,17 @@
         <img title="Dark Room" src="/img/tboi/Dark_Room.png" :class="{ 'opacity-35': !getNumberItemsFromName('The Negative Unlock')  }" />
         <span class="mr-2"></span>
         <img title="Mega Satan" src="/img/tboi/Mega_Satan.png" :class="{ 'opacity-35': !getNumberItemsFromName('Key Pieces Unlock')  }" />
-        <span class="mr-2"></span>
-        <img title="The Void" src="/img/tboi/The_Void.png" :class="{ 'opacity-35': !getNumberItemsFromName('Undefined Unlock')  }" />
+        <span v-if="pathNotExcluded('The Void')" class="mr-2"></span>
+        <img v-if="pathNotExcluded('The Void')" title="The Void" src="/img/tboi/The_Void.png" :class="{ 'opacity-35': !getNumberItemsFromName('Void Portal Unlock')  }" />
+
+
+        <span v-if="pathNotExcluded('Alt Path')" class="mr-2"></span>
+        <img v-if="pathNotExcluded('Alt Path')" title="Downpour" src="/img/tboi/Downpour.png" :class="{ 'opacity-35': !getNumberItemsFromGroup(['Downpour Unlock', 'Dross Unlock'])  }" />
+        <img v-if="pathNotExcluded('Alt Path')" title="Mines" src="/img/tboi/Mines.png" :class="{ 'opacity-35': !getNumberItemsFromGroup(['Mines Unlock', 'Ashpit Unlock'])  }" />
+        <img v-if="pathNotExcluded('Alt Path')" title="Mausoleum" src="/img/tboi/Mausoleum.png" :class="{ 'opacity-35': !getNumberItemsFromGroup(['Mausoleum Unlock', 'Gehenna Unlock'])  }" />
+        <img v-if="pathNotExcluded('Alt Path')" title="Corpse" src="/img/tboi/Corpse.png" :class="{ 'opacity-35': !getNumberItemsFromName('Knife Pieces Unlock')  }" />
+        <span v-if="pathNotExcluded('Alt Path') && pathNotExcluded('Ascend')" class="mr-2"></span>
+        <img v-if="pathNotExcluded('Alt Path') && pathNotExcluded('Ascend')" title="Home" src="/img/tboi/Home.png" :class="{ 'opacity-35': !getNumberItemsFromName('Strange Door Unlock')  }" />
     </div>
 </template>
     
@@ -70,6 +79,11 @@
             },
             getNumberItemsFromGroup: function (name) {
                 return this.$parent.getNumberItemsFromGroup(name);
+            },
+            pathNotExcluded: function (name) {
+                if (!this.$parent.hasSlotData())
+                    return true;
+                return !this.data.slot_data.options.excluded_areas.includes(name);
             },
         },
         components: {

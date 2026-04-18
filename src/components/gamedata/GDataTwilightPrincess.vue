@@ -15,7 +15,7 @@
             <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Inventory</div>
             <span v-if="closedPalaceOfTwilight()" class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Mirror Shard')  }"><img title="Mirror Shard" src="/img/twilight_princess/shard4.png" />x{{ getNumberItemsFromName('Progressive Mirror Shard') }} </span> / 4</span>
 
-            <span v-if="closedSkyCity()"  class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Sky Book')  }"><img title="Sky Book" src="/img/twilight_princess/skybook.png" />x{{ getNumberItemsFromName('Progressive Sky Book') }} </span> / 7</span>
+            <span v-if="closedSkyCity()" class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Sky Book')  }"><img title="Sky Book" src="/img/twilight_princess/skybook.png" />x{{ getNumberItemsFromName('Progressive Sky Book') }} </span> / 7</span>
 
             <span v-if="closedSkyCity() || closedPalaceOfTwilight()" class="mr-2"></span>
 
@@ -25,8 +25,7 @@
             <span class="mr-2"></span>
 
 
-            <img v-if="getNumberItemsFromName('Horse Call') > 1" title="Ocarina of Time" src="/img/twilight_princess/46_1.png" />
-            <img v-else src="/img/twilight_princess/35_1.png" title="Horse Call" :class="{ 'opacity-25': !getNumberItemsFromName('Horse Call')  }" />
+            <img src="/img/twilight_princess/35_1.png" title="Horse Call" :class="{ 'opacity-25': !getNumberItemsFromName('Horse Call')  }" />
             <img title="Bomb Bag" src="/img/twilight_princess/bombbag.png" :class="{ 'opacity-25': !getNumberItemsFromName('Bomb Bag')  }" />
             <img title="Gale Boomerang" src="/img/twilight_princess/boomerang.png" :class="{ 'opacity-25': !getNumberItemsFromName('Gale Boomerang')  }" />
             <img v-if="getNumberItemsFromName('Progressive Hero\'s Bow')" src="/img/twilight_princess/bow.png" title="Bow" />
@@ -46,32 +45,14 @@
     /**
     * Twilight Princess
     *
-    * By Default, Objectives are Dungeons rewards. But it can change depnding on the Bridge/Ganon Boss Key setting
+    * Goal is to beat Ganondorf.
+    * In order to beat him, you need :
+    * - A Master Sword (sword level 3 or 4)
+    * - 3 Fused Shadows
+    * - The Shadow Crystal
     *
-    * Bridge setting :
-    *   0 - vanilla
-    *   1 - always_open
-    *   2 - stones
-    *   3 - medallions
-    *   4 - dungeon_rewards
-    *   5 - dungeons
-    *   6 - tokens
-    *   7 - greg
-    *
-    *
-    * Ganon Boss Key setting :
-    *   0 - vanilla
-    *   1 - anywhere
-    *   2 - lacs_vanilla
-    *   3 - lacs_stones
-    *   4 - lacs_medallions
-    *   5 - lacs_dungeon_rewards
-    *   6 - lacs_dungeons
-    *   7 - lacs_skull_tokens
-    *
-    *   If Triforce Hunt is on, Ganon Boss Key will always be behind the Triforce Pieces goal.
     */
-export default {
+    export default {
         name: "gDataTwilightPrincess",
         props: {
             data: Object,
@@ -81,11 +62,11 @@ export default {
             total_checks: Number,
             player_name: String,
             player_game: String
-  },
-  data: function () {
-    return {
-    };
-  },
+        },
+        data: function () {
+            return {
+            };
+        },
         methods: {
             getGoalDetails: function () {
                 if (!this.data.slot_data.hasOwnProperty('rainbow_bridge'))
@@ -123,7 +104,7 @@ export default {
                 return false;
             }
         },
-  components: {
-  },
-};
+        components: {
+        },
+    };
 </script>

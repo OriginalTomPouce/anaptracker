@@ -1,5 +1,5 @@
 var ANAP_CONFIG = {
-    BASE_DIRECTORY: '/anaptracker/',
+    BASE_DIRECTORY: '/',
     REFRESH_TIMER_SMALL: 10000,
     REFRESH_TIMER_MEDIUM: 15000,
     REFRESH_TIMER_BIG: 30000,
@@ -8,7 +8,6 @@ var ANAP_CONFIG = {
     APP_VERSION: '0.7.5',
     SETTINGS_VERSION: '2',
     OFFLINE: false,
-    URL_WEBSITE: 'https://tomagueri.fr/anaptracker',
 };
 
 export default ANAP_CONFIG;

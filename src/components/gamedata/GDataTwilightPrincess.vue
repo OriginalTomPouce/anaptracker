@@ -5,10 +5,10 @@
             <span class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Fused Shadow')  }"><img title="Fused Shadow" src="/img/twilight_princess/shadow3.png" />x{{ getNumberItemsFromName('Progressive Fused Shadow') }} </span> / 3</span>
 
             <img title="Shadow Crystal" :class="{ 'opacity-25': !getNumberItemsFromName('Shadow Crystal')  }" src="/img/twilight_princess/shad_crystal.png" />
-            <img v-if="getNumberItemsFromName('Progressive Master Sword') > 3" title="Master Sword" src="/img/twilight_princess/23_3.png" />
+            <img v-if="getNumberItemsFromName('Progressive Master Sword') > 3" title="Blessed Master Sword" src="/img/twilight_princess/23_3.png" />
             <img v-else-if="getNumberItemsFromName('Progressive Master Sword') > 2" title="Master Sword" src="/img/twilight_princess/23_1.png" />
-            <img v-else-if="getNumberItemsFromName('Progressive Master Sword') > 1" title="Master Sword" src="/img/twilight_princess/22_1.png" />
-            <img v-else title="Kokiri Sword" src="/img/twilight_princess/47_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Master Sword')  }" />
+            <img v-else-if="getNumberItemsFromName('Progressive Master Sword') > 1" title="Orlin Sword" src="/img/twilight_princess/22_1.png" />
+            <img v-else title="Wooden Sword" src="/img/twilight_princess/47_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Master Sword')  }" />
         </div>
 
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">

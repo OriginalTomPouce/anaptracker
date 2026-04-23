@@ -6,6 +6,7 @@ import GDataCeleste from './components/gamedata/GDataCeleste.vue';
 import GDataCrystalProject from './components/gamedata/GDataCrystalProject.vue';
 import GDataFactorio from './components/gamedata/GDataFactorio.vue';
 import GDataFFMysticQuest from './components/gamedata/GDataFFMysticQuest.vue';
+import GDataHitmanWOA from './components/gamedata/GDataHitmanWOA.vue';
 import GDataHollowKnight from './components/gamedata/GDataHollowKnight.vue';
 import GDataKingdomHearts2 from './components/gamedata/GDataKingdomHearts2.vue';
 import GDataMetroidFusion from './components/gamedata/GDataMetroidFusion.vue';
@@ -31,7 +32,6 @@ import GDataTerraria from './components/gamedata/GDataTerraria.vue';
 import GDataTheMinishCap from './components/gamedata/GDataTheMinishCap.vue';
 import GDataTwilightPrincess from './components/gamedata/GDataTwilightPrincess.vue';
 
-import GDataHitmanWOA from './components/gamedata/GDataHitmanWOA.vue';
 
 var LIST_OF_GAMES = [
     {
@@ -61,7 +61,11 @@ var LIST_OF_GAMES = [
     {
         'name': 'Final Fantasy Mystic Quest',
         'class': GDataFFMysticQuest
-    }, 
+    },
+    {
+        'name': 'HITMAN World of Assassination',
+        'class': GDataHitmanWOA
+    },
     {
         'name': 'Hollow Knight',
         'class': GDataHollowKnight
@@ -82,22 +86,6 @@ var LIST_OF_GAMES = [
         'name': 'Metroid Zero Mission',
         'class': GDataMetroidZeroMission
     },
-    {
-        'name': 'Secret of Evermore',
-        'class': GDataSecretOfEvermore
-    },
-    {
-        'name': 'SMW: Spicy Mycena Waffles',
-        'class': GDataSpicyMycenaWaffles
-    }, 
-    {
-        'name': 'Super Mario World',
-        'class': GDataSuperMarioWorld
-    }, 
-    {
-        'name': 'Super Mario 64',
-        'class': GDataMario64
-    }, 
     {
         'name': 'Paper Mario: The Thousand-Year Door',
         'class': GDataPaperMarioTTYD
@@ -131,13 +119,29 @@ var LIST_OF_GAMES = [
         'class': GDataRiskOfRain2
     },
     {
-        'name': 'Sonic Adventure 2 Battle',
-        'class': GDataSonicAdventure2Battle
+        'name': 'Secret of Evermore',
+        'class': GDataSecretOfEvermore
     },
     {
         'name': 'Ship of Harkinian',
         'class': GDataShipOfHarkinian
     },
+    {
+        'name': 'SMW: Spicy Mycena Waffles',
+        'class': GDataSpicyMycenaWaffles
+    }, 
+    {
+        'name': 'Sonic Adventure 2 Battle',
+        'class': GDataSonicAdventure2Battle
+    },
+    {
+        'name': 'Super Mario World',
+        'class': GDataSuperMarioWorld
+    }, 
+    {
+        'name': 'Super Mario 64',
+        'class': GDataMario64
+    }, 
     {
         'name': 'The Binding of Isaac Repentance',
         'class': GDataTBOIRepentance
@@ -157,10 +161,6 @@ var LIST_OF_GAMES = [
     {
         'name': 'Super Metroid',
         'class': GDataSuperMetroid
-    },
-    {
-        'name': 'HITMAN World of Assassination',
-        'class': GDataHitmanWOA
     }
 ];
 

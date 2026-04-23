@@ -21,6 +21,7 @@ import GDataRiskOfRain2 from './components/gamedata/GDataRiskOfRain2.vue';
 import GDataShipOfHarkinian from './components/gamedata/GDataShipOfHarkinian.vue';
 import GDataSonicAdventure2Battle from './components/gamedata/GDataSonicAdventure2Battle.vue';
 import GDataMario64 from './components/gamedata/GDataMario64.vue';
+import GDataSpicyMycenaWaffles from './components/gamedata/GDataSpicyMycenaWaffles.vue';
 import GDataSuperMarioWorld from './components/gamedata/GDataSuperMarioWorld.vue';
 import GDataSecretOfEvermore from './components/gamedata/GDataSecretOfEvermore.vue';
 import GDataSuperMetroid from './components/gamedata/GDataSuperMetroid.vue';
@@ -86,6 +87,10 @@ var LIST_OF_GAMES = [
         'class': GDataSecretOfEvermore
     },
     {
+        'name': 'SMW: Spicy Mycena Waffles',
+        'class': GDataSpicyMycenaWaffles
+    }, 
+    {
         'name': 'Super Mario World',
         'class': GDataSuperMarioWorld
     }, 
@@ -96,6 +101,10 @@ var LIST_OF_GAMES = [
     {
         'name': 'Paper Mario: The Thousand-Year Door',
         'class': GDataPaperMarioTTYD
+    }, 
+    {
+        'name': 'Pokemon Black and White',
+        'class': GDataPokemonBlackWhite
     }, 
     {
         'name': 'Pokemon Crystal',

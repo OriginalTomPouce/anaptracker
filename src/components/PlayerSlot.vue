@@ -412,7 +412,7 @@
                 return linkURL;
             },
             slotLocked: function () {
-                if (this.$parent.getSlotLockCheck(this.data.name))
+                if (this.player_game == 'SlotLock' || this.$parent.getSlotLockCheck(this.data.name))
                     return false;
                 return true;
             }

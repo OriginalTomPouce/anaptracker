@@ -143,12 +143,16 @@ var LIST_OF_GAMES = [
         'class': GDataMario64
     }, 
     {
-        'name': 'The Binding of Isaac Repentance',
-        'class': GDataTBOIRepentance
+        'name': 'Super Metroid',
+        'class': GDataSuperMetroid
     },
     {
         'name': 'Terraria',
         'class': GDataTerraria
+    },
+    {
+        'name': 'The Binding of Isaac Repentance',
+        'class': GDataTBOIRepentance
     },
     {
         'name': 'The Minish Cap',
@@ -157,10 +161,6 @@ var LIST_OF_GAMES = [
     {
         'name': 'Twilight Princess',
         'class': GDataTwilightPrincess
-    },
-    {
-        'name': 'Super Metroid',
-        'class': GDataSuperMetroid
     }
 ];
 

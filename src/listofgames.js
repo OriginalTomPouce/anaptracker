@@ -10,6 +10,7 @@ import GDataHollowKnight from './components/gamedata/GDataHollowKnight.vue';
 import GDataKingdomHearts2 from './components/gamedata/GDataKingdomHearts2.vue';
 import GDataMetroidFusion from './components/gamedata/GDataMetroidFusion.vue';
 import GDataMetroidZeroMission from './components/gamedata/GDataMetroidZeroMission.vue';
+import GDataPaperMarioTTYD from './components/gamedata/GDataPaperMarioTTYD.vue';
 import GDataPokemonBlackWhite from './components/gamedata/GDataPokemonBlackWhite.vue';
 import GDataPokemonCrystal from './components/gamedata/GDataPokemonCrystal.vue';
 import GDataPokemonEmerald from './components/gamedata/GDataPokemonEmerald.vue';
@@ -93,8 +94,8 @@ var LIST_OF_GAMES = [
         'class': GDataMario64
     }, 
     {
-        'name': 'Pokemon Black and White',
-        'class': GDataPokemonBlackWhite
+        'name': 'Paper Mario: The Thousand-Year Door',
+        'class': GDataPaperMarioTTYD
     }, 
     {
         'name': 'Pokemon Crystal',

@@ -38,6 +38,7 @@
             <img v-if="getNumberItemsFromName('Progressive Dominion Rod') > 1" title="Dominion Rod" src="/img/twilight_princess/dominion.png" />
             <img v-else title="Dominion Rod (Broken)" src="/img/twilight_princess/brokendominion.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Dominion Rod')  }" />
             <img title="Fishing Rod" src="/img/twilight_princess/rod.png" :class="{ 'opacity-25': getNumberItemsFromName('Progressive Fishing Rod') < 2 }" />
+            <img title="Lantern" src="/img/twilight_princess/lantern.png" :class="{ 'opacity-25': !getNumberItemsFromName('Lantern') }" />
             <img title="Bottle" src="/img/twilight_princess/bottle.png" :class="{ 'opacity-25': !hasBottle()  }" />
         </div>
     </div>

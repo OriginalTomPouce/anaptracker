@@ -161,7 +161,7 @@ export default {
             return this.data.slot_data[`included_${season}_locations`] && this.data.slot_data[`included_${season}_locations`].length > 0;
         },
         isLevelIncluded: function (season, level_code) {
-            console.log(this);
+            //console.log(this);
             
             if (!this.$parent.hasSlotData())
                 return true;

@@ -1,8 +1,8 @@
 <template>
     <div class="inline-block">
 
-        <div v-if="getGoalEggs() || !slotData()" :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
-            <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Goal</div>
+        <div v-if="getGoalEggs() || !slotData()" :class="getImageClass()" class="inline-b    *      *      *   * lock bg-stone-100/40 rounded-xs p-[2px] pl-[4px]     * pb-[4px] mx-2 bg-opacity-25">
+         *        <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Goal</div>
 
             <span v-if="getGoalEggs()" class="mr-1 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromName('Yoshi Egg')  }"><img src="/img/smw/items/yoshi_egg.png" title="Yoshi Egg" />x{{ getNumberItemsFromName('Yoshi Egg') }} </span> / {{ getGoalEggs() }}</span>
             <span v-else-if="!slotData()" class="mr-1 text-xs font-bold" :class="{ 'opacity-25': !getNumberItemsFromName('Yoshi Egg')  }"><img src="/img/smw/items/yoshi_egg.png" title="Yoshi Egg" />x{{ getNumberItemsFromName('Yoshi Egg') }} </span>
@@ -41,6 +41,11 @@
     *
     * Goal is to beat Bowser of get Yoshi's Eggs.
     * 
+    * Differences between Super Mario World and Spicy Mycenas Waffles :
+    * - Goal is not set on the slot data
+    * - Yoshi, Swim, and Run are progressive on Waffles
+    * - Yoshi's Eggs are called "Golden Yoshi Egg" on Waffles.
+    *
     */
 export default {
   name: "gDataSuperMarioWorld",

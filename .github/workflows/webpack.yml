@@ -39,4 +39,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www
-            bash deploy-blender.sh
+            bash deploy-anaptracker.sh

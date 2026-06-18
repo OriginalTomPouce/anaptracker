@@ -9,14 +9,6 @@ var ANAP_WEBHOSTS = {
         alias: "archipelago",
         apurl: "https://archipelago.gg",
     },
-    "bananium" : {
-        alias: "bananium",
-        apurl: "https://ap.bananium.fr",
-    },
-    "ap.bananium.fr" :  {
-        alias: "bananium",
-        apurl: "https://ap.bananium.fr",
-    },
     "aptoday" : {
         alias: "aptoday",
         apurl: "https://archipelago.today",
@@ -32,6 +24,14 @@ var ANAP_WEBHOSTS = {
     "multiworld.gg" : {
         alias: "multiworld",
         apurl: "https://multiworld.gg",
+    },
+    "apfightme" : {
+        alias: "apfightme",
+        apurl: "https://multiworld.gg",
+    },
+    "archipelago.fightme.pro" : {
+        alias: "apfightme",
+        apurl: "https://archipelago.fightme.pro",
     },
 }
 

@@ -220,11 +220,11 @@ export default {
                 var dlcs = [];
                 if (this.data.slot_data.key_rings && this.data.slot_data.key_rings_count)
                     dlcs.push('Keyring (' + this.data.slot_data.key_rings_count + ')');
-                if (this.data.slot_data.small_key_shuffle == 2)
-                    dlcs.push('Shuffled on any dungeon');
                 if (this.data.slot_data.small_key_shuffle == 3)
-                    dlcs.push('Shuffled on overworld');
+                    dlcs.push('Shuffled on any dungeon');
                 if (this.data.slot_data.small_key_shuffle == 4)
+                    dlcs.push('Shuffled on overworld');
+                if (this.data.slot_data.small_key_shuffle == 5)
                     dlcs.push('Shuffled anywhere');
                 if (dlcs.length) {
                     row_key.value = dlcs.join(', ');
@@ -255,11 +255,11 @@ export default {
                 }
 
                 dlcs = [];
-                if (this.data.slot_data.boss_key_shuffle == 2)
-                    dlcs.push('Boss Keys (dungeon)');
                 if (this.data.slot_data.boss_key_shuffle == 3)
-                    dlcs.push('Boss Keys (OW)');
+                    dlcs.push('Boss Keys (dungeon)');
                 if (this.data.slot_data.boss_key_shuffle == 4)
+                    dlcs.push('Boss Keys (OW)');
+                if (this.data.slot_data.boss_key_shuffle == 5)
                     dlcs.push('Boss Keys');
                 if (this.data.slot_data.shuffle_boss_souls)
                     dlcs.push('Boss Souls');

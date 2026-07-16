@@ -56,8 +56,8 @@
             <img v-if="getNumberItemsFromName('Progressive Bow') > 2" title="Bow" src="/img/oot/6_3.png" />
             <img v-else-if="getNumberItemsFromName('Progressive Bow') > 1" title="Bow" src="/img/oot/6_2.png" />
             <img v-else src="/img/oot/6_1.png" title="Bow" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Bow')  }" />
-            <img src="/img/oot/9_1.png" title="Fire Arrow" :class="{ 'opacity-25': !getNumberItemsFromName('Fire Arrows')  }" />
-            <img src="/img/oot/11_1.png" title="Light Arrow" :class="{ 'opacity-25': !getNumberItemsFromName('Light Arrows')  }" />
+            <img src="/img/oot/9_1.png" title="Fire Arrow" :class="{ 'opacity-25': !getNumberItemsFromName('Fire Arrow')  }" />
+            <img src="/img/oot/11_1.png" title="Light Arrows" :class="{ 'opacity-25': !getNumberItemsFromName('Light Arrows')  }" />
             <img v-if="getNumberItemsFromName('Progressive Hookshot') > 1" title="Longshot" src="/img/oot/7_2.png" />
             <img v-else src="/img/oot/7_1.png" title="Hookshot" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Hookshot')  }" />
             <img title="Megaton Hammer" src="/img/oot/8_1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Megaton Hammer')  }" />

@@ -46,7 +46,7 @@
 * 3 - Bounty & Lucky Emblems
 */ 
 export default {
-  name: "gDataMario64",
+        name: "gDataKingdomHearts2",
         props: {
             data: Object,
             gamedata: Object,

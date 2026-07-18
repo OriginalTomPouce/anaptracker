@@ -45,18 +45,54 @@ class StorageMaster {
                 x -= 1;
             }
         }
+        this.saveMaster();
     }
     
+    
+    deleteRoom (hash) {
+        for (var x = 0; x < this.datapackages.length; x++) {
+            if (this.rooms_stored[x].hash == hash) {
+                try {
+                localStorage.removeItem(this.storage_prefix + '_ROOM_' + this.rooms_stored[x].hash);
+                
+                this.rooms_stored.splice(x, 1);
+                }
+                catch {
+                    console.log('Deletion failed failed : ' + this.storage_prefix + '_ROOM_' + this.rooms_stored[x].hash);
+                }
+            }
+        }
+        this.saveMaster();
+    }
+
+    deleteDatapackage (game) {
+        console.log('Trying to delete the package : ' + game);
+        for (var x = 0; x < this.datapackages.length; x++) {
+            if (this.datapackages[x].name == game) {
+                try {
+                    localStorage.removeItem(this.storage_prefix + '_DATAPACKAGE_' + this.datapackages[x].hash);
+                
+                    this.datapackages.splice(x, 1);
+                }
+                catch {
+                    console.log('Deletion failed failed : ' + this.storage_prefix + '_DATAPACKAGE_' + this.datapackages[x].hash);
+                }
+            }
+        }
+        this.saveMaster();
+    }
+
     saveMaster () {
         var masterData = JSON.stringify({ 'version': this.version, 'datapackages': this.datapackages, 'rooms_stored': this.rooms_stored });
         localStorage.setItem(this.storage_name, masterData);
     }
+
     saveDatapackage (game, hash, data) {
 
         var new_package = { 'name': game, 'hash': hash, 'date': Date.now() };
         var stored = false;
         for (var x = 0; x < this.datapackages.length; x++) {
-            if (this.datapackages[x].game == game) {
+            if (this.datapackages[x].name == game) {
                 try {
                     localStorage.setItem(this.storage_prefix + '_DATAPACKAGE_' + hash, data);
                     // If datapackage has changed version, we remove the old one.
@@ -83,6 +119,28 @@ class StorageMaster {
         }
         this.saveMaster();
     }
+
+    getDatapackageSize (hash) {
+        for (var x = 0; x < this.datapackages.length; x++) {
+            if (this.datapackages[x].hash == hash) {
+                
+                var vRoomData = localStorage.getItem(this.storage_prefix + '_DATAPACKAGE_' + this.datapackages[x].hash);
+                if (vRoomData != null) {
+                    var length = vRoomData.length;
+                    if (length >= 1024*1024) {
+                        return Math.floor(length * 10 / (1024 * 1024)) / 10 + 'Mo';
+                    }
+                    else if (length >= 1024) {
+                        return Math.floor(length * 10 / 1024) / 10 + 'Ko';
+
+                    }
+                    return length + 'o';
+                }
+            }
+        }
+        return null;
+    }
+
     loadDatapackage (hash) {
         for (var x = 0; x < this.datapackages.length; x++) {
             if (this.datapackages[x].hash == hash) {

@@ -132,6 +132,8 @@
             },
             getItemHinted: function (element) {
                 var player = this.getPlayerbyID(element[0]);
+                if (!player)
+                    return '(???)';
                 var datapackage = this.gamedata[player.game];
 
                 if (typeof datapackage !== 'object')

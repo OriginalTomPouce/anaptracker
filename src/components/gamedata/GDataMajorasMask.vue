@@ -25,15 +25,16 @@
             <img v-else src="/img/mm/equipment/magic1.png" title="Magic" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Magic')  }" />
 
             <img title="Ocarina of Time" src="/img/mm/items/ocarina.png" />
-            <img v-if="getNumberItemsFromName('Progressive Bomb Bag')"  title="Bomb Bag" src="/img/mm/items/bomb.png" />
+            <img v-if="getNumberItemsFromName('Progressive Bomb Bag')" title="Bomb Bag" src="/img/mm/items/bomb.png" />
             <img v-else-if="getNumberItemsFromName('Progressive Bombchu')" title="Bombchus" src="/img/mm/items/bombchu.png" />
-            <img v-else-if="getNumberItemsFromName('Blask Mask')" title="Blast Mask"  src="/img/mm/masks/blast.png" />
+            <img v-else-if="getNumberItemsFromName('Blask Mask')" title="Blast Mask" src="/img/mm/masks/blast.png" />
             <img title="Explosives" v-else src="/img/mm/items/bomb.png" class="opacity-25" />
             <img title="Bow" src="/img/mm/items/bow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Bow')  }" />
             <img title="Fire Arrow" src="/img/mm/items/fire_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Fire Arrow')  }" />
             <img title="Ice Arrow" src="/img/mm/items/ice_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ice Arrow')  }" />
             <img title="Light Arrow" src="/img/mm/items/light_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Light Arrow')  }" />
             <img title="Hookshot" src="/img/mm/items/hookshot.png" :class="{ 'opacity-25': !getNumberItemsFromName('Hookshot')  }" />
+            <img title="Pictograph Box" src="/img/mm/items/pictobox.png" :class="{ 'opacity-25': !getNumberItemsFromName('Pictograph Box')  }" />
         </div>
 
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">

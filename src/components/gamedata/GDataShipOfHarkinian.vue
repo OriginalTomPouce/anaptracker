@@ -210,8 +210,12 @@ export default {
                 // Dungeon Rewards
                 var row_tmp = { title: 'Dungeons Rewards are', value: 'Vanilla', details: null };
                 if (this.data.slot_data.shuffle_dungeon_rewards == 1)
-                    row_tmp.value = 'On their dungeons';
+                    row_tmp.value = 'End of dungeons';
                 else if (this.data.slot_data.shuffle_dungeon_rewards == 2)
+                    row_tmp.value = 'Shuffled on any dungeon';
+                else if (this.data.slot_data.shuffle_dungeon_rewards == 3)
+                    row_tmp.value = 'Shuffled on overworld';
+                else if (this.data.slot_data.shuffle_dungeon_rewards == 4)
                     row_tmp.value = 'Anywhere';
 
                 res.push(row_tmp);

@@ -33,6 +33,14 @@ var ANAP_WEBHOSTS = {
         alias: "apfightme",
         apurl: "https://archipelago.fightme.pro",
     },
+    "lonlonlabs": {
+        alias: "lonlonlabs",
+        apurl: "https://ap.lonlonlabs.dev",
+    },
+    "ap.lonlonlabs.dev": {
+        alias: "lonlonlabs",
+        apurl: "https://ap.lonlonlabs.dev",
+    },
 }
 
 export default ANAP_WEBHOSTS;

@@ -5,7 +5,7 @@
         <div @click="toggleExpand()" class="z-2 flex flex-column justify-between">
             <div class="w-1/4 lg:w-1/5 2xl:w-1/6 z-3 text-dark " :class="{ 'opacity-50' : get_status() == 0 }">
                 <a @click="toggleExpand()" :href="slotURL()" target="_blank" class="mr-2 font-bold hover:text-blue-800 hover:underline">
-                    <span v-if="$parent.$parent.OPTIONS.show_slot_number" class="font-bold">{{ data.id }} - </span>{{ player_name }}
+                    <span v-if="$parent.$parent.OPTIONS.show_slot_number" class="font-bold">{{ data.id }} - </span>{{ get_player_name() }}
                 </a>
                 <br v-if="$parent.$parent.OPTIONS.row_size" />
                 <span class="font-normal text-tiny">({{ player_game }})</span>
@@ -262,6 +262,9 @@
             },
             displayHints: function () {
                 return !this.data.extended && this.$parent.$parent.OPTIONS.show_hints;
+            },
+            get_player_name: function () {
+                return this.data.alias ? this.data.alias : this.data.name;
             },
             get_game_data_class: function () {
                 for (var x = 0; x < this.LIST_OF_GAMES.length; x++) {

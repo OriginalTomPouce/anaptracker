@@ -97,6 +97,7 @@
             hints: [],
             activity_timer: '',
             status: '',
+            alias: null,
         };
         locations_hist = [];
         static_data = {};
@@ -187,6 +188,7 @@
                             this.GLOBAL_TRACKER_DATA.players[x].tracker_data.player_items_received = tdata.player_items_received[y].items;
                             this.GLOBAL_TRACKER_DATA.players[x].tracker_data.player_checks_done = tdata.player_checks_done[y].locations;
                             this.GLOBAL_TRACKER_DATA.players[x].tracker_data.hints = tdata.hints[y].hints;
+                            this.GLOBAL_TRACKER_DATA.players[x].alias = tdata.aliases[y].alias;
                             if (tdata.activity_timers[y].time) {
                                 this.GLOBAL_TRACKER_DATA.players[x].tracker_data.activity_timer = tdata.activity_timers[y].time;
                             }

@@ -12,6 +12,7 @@ import GDataKingdomHearts from './components/gamedata/GDataKingdomHearts.vue';
 import GDataKingdomHearts2 from './components/gamedata/GDataKingdomHearts2.vue';
 import GDataMetroidFusion from './components/gamedata/GDataMetroidFusion.vue';
 import GDataMetroidZeroMission from './components/gamedata/GDataMetroidZeroMission.vue';
+import GDataMM2ShipVue from './components/gamedata/GDataMM2Ship.vue';
 import GDataPaperMarioTTYD from './components/gamedata/GDataPaperMarioTTYD.vue';
 import GDataPokemonBlackWhite from './components/gamedata/GDataPokemonBlackWhite.vue';
 import GDataPokemonCrystal from './components/gamedata/GDataPokemonCrystal.vue';
@@ -36,6 +37,10 @@ import GDataTwilightPrincess from './components/gamedata/GDataTwilightPrincess.v
 
 
 var LIST_OF_GAMES = [
+    {
+        'name': '2 Ship 2 Harkinian (MM)',
+        'class': GDataMM2ShipVue
+    },
     {
         'name': 'A Hat in Time',
         'class': GDataAHatInTime

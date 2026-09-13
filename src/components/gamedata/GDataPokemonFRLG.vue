@@ -166,7 +166,7 @@ export default {
                     res.push(row_tmp);
 
                 var row_roadblocks = { title: 'World update', value: null, details: null };
-                if (this.data.slot_data.modify_world_state.length) {
+                if (this.data.slot_data.modify_world_state && this.data.slot_data.modify_world_state.length) {
                     row_roadblocks.value = this.data.slot_data.modify_world_state.join(', ');
                     res.push(row_roadblocks);
                 }

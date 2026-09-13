@@ -66,7 +66,7 @@
             <img title="Song of Soaring" src="/img/mm/equipment/song_soaring.png" :class="{ 'opacity-25': !getNumberItemsFromName('Song of Soaring')  }" />
             <img title="Song of Storms" src="/img/mm/equipment/song_storms.png" :class="{ 'opacity-25': !getNumberItemsFromName('Song of Storms')  }" />
             <img title="Sonata of Awakening" src="/img/mm/equipment/song_sonata.png" :class="{ 'opacity-25': !getNumberItemsFromName('Sonata of Awakening')  }" />
-            <img title="Goron's Lullaby" src="/img/mm/equipment/song_lullaby.png" :class="{ 'opacity-25': !getNumberItemsFromName('Goron Lullaby')  }" />
+            <img title="Goron's Lullaby" src="/img/mm/equipment/song_lullaby.png" :class="{ 'opacity-25': getNumberItemsFromName('Progressive Goron Lullaby') < 2 }" />
             <img title="New Wave Bossa Nova" src="/img/mm/equipment/song_bossa_nova.png" :class="{ 'opacity-25': !getNumberItemsFromName('New Wave Bossa Nova')  }" />
             <img title="Elegy of Emptiness" src="/img/mm/equipment/song_elegy.png" :class="{ 'opacity-25': !getNumberItemsFromName('Elegy of Emptiness')  }" />
         </div>
@@ -184,6 +184,11 @@ export default {
                     return 1;
 
                 const clock_arrays = ['Time (Day 1)', 'Time (Night 1)', 'Time (Day 2)', 'Time (Night 2)', 'Time (Day 3)', 'Time (Night 3)'];
+
+                // En attendant d'avoir l'inventaire de départ.
+                if (this.$parent.hasSlotData() && this.data.slot_data.starting_clock == clock_arrays[number])
+                    return true;
+
                 if (this.data.slot_data.clock_shuffle == 1) {
                     if (!this.data.slot_data.clock_shuffle_progressive)
                         return this.getNumberItemsFromName(clock_arrays[number]);

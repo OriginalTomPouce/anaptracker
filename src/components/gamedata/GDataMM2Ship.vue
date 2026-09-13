@@ -11,11 +11,11 @@
             <img title="Oath to Order" src="/img/mm/equipment/song_oath.png" :class="{ 'opacity-25': !getNumberItemsFromName('Oath to Order')  }" />
             <span v-if="getClockShuffle()" class="mr-2"></span>
             <img v-if="getClockShuffle()" title="Time (Day 1)" src="/img/mm/Clock_Day.png" :class="{ 'opacity-25': !getClockItem(0)  }" />
-            <img v-if="getClockShuffle()" title="Night (Night 1)" src="/img/mm/Clock_Night.png" :class="{ 'opacity-25': !getClockItem(1)  }" />
+            <img v-if="getClockShuffle()" title="Time (Night 1)" src="/img/mm/Clock_Night.png" :class="{ 'opacity-25': !getClockItem(1)  }" />
             <img v-if="getClockShuffle()" title="Time (Day 2)" src="/img/mm/Clock_Day.png" :class="{ 'opacity-25': !getClockItem(2)  }" />
-            <img v-if="getClockShuffle()" title="Night (Night 2)" src="/img/mm/Clock_Night.png" :class="{ 'opacity-25': !getClockItem(3)  }" />
+            <img v-if="getClockShuffle()" title="Time (Night 2)" src="/img/mm/Clock_Night.png" :class="{ 'opacity-25': !getClockItem(3)  }" />
             <img v-if="getClockShuffle()" title="Time (Day 3)" src="/img/mm/Clock_Day.png" :class="{ 'opacity-25': !getClockItem(4)  }" />
-            <img v-if="getClockShuffle()" title="Night (Night 3)" src="/img/mm/Clock_Night.png" :class="{ 'opacity-25': !getClockItem(5)  }" />
+            <img v-if="getClockShuffle()" title="Time (Night 3)" src="/img/mm/Clock_Night.png" :class="{ 'opacity-25': !getClockItem(5)  }" />
         </div>
 
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
@@ -41,7 +41,6 @@
             <img title="Ice Arrow" src="/img/mm/items/ice_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ice Arrow')  }" />
             <img title="Light Arrow" src="/img/mm/items/light_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Light Arrow')  }" />
             <img title="Hookshot" src="/img/mm/items/hookshot.png" :class="{ 'opacity-25': !getNumberItemsFromName('Hookshot')  }" />
-            <img title="Pictograph Box" src="/img/mm/items/pictobox.png" :class="{ 'opacity-25': !getNumberItemsFromName('Pictograph Box')  }" />
         </div>
 
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">

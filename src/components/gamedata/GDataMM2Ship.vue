@@ -25,8 +25,8 @@
             <img v-else-if="getSwordLevel() > 1" title="Razor Sword" src="/img/mm/equipment/sword2.png" />
             <img v-else title="Kokiri Sword" src="/img/mm/equipment/sword1.png" :class="{ 'opacity-25': !getSwordLevel()  }" />
 
-            <img v-if="getShieldLevel() > 1" title="Mirror Shield" src="/img/mm/equipment/shield2.png" />
-            <img v-else title="Hero's Shield" src="/img/mm/equipment/shield1.png" :class="{ 'opacity-25': !getShieldLevel()  }" />
+            <img v-if="getNumberItemsFromName('Mirror Shield')" title="Mirror Shield" src="/img/mm/equipment/shield2.png" />
+            <img v-else title="Hero's Shield" src="/img/mm/equipment/shield1.png" :class="{ 'opacity-25': !getNumberItemsFromName('Hero\'s Shield')  }" />
 
             <img v-if="getNumberItemsFromName('Progressive Magic') > 1" title="Magic" src="/img/mm/equipment/magic2.png" />
             <img v-else src="/img/mm/equipment/magic1.png" title="Magic" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Magic')  }" />
@@ -37,9 +37,9 @@
             <img v-else-if="getNumberItemsFromName('Blask Mask')" title="Blast Mask" src="/img/mm/masks/blast.png" />
             <img title="Explosives" v-else src="/img/mm/items/bomb.png" class="opacity-25" />
             <img title="Bow" src="/img/mm/items/bow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Bow')  }" />
-            <img title="Fire Arrow" src="/img/mm/items/fire_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Fire Arrow')  }" />
-            <img title="Ice Arrow" src="/img/mm/items/ice_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ice Arrow')  }" />
-            <img title="Light Arrow" src="/img/mm/items/light_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Light Arrow')  }" />
+            <img title="Fire Arrow" src="/img/mm/items/fire_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Fire Arrows')  }" />
+            <img title="Ice Arrow" src="/img/mm/items/ice_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ice Arrows')  }" />
+            <img title="Light Arrow" src="/img/mm/items/light_arrow.png" :class="{ 'opacity-25': !getNumberItemsFromName('Light Arrows')  }" />
             <img title="Hookshot" src="/img/mm/items/hookshot.png" :class="{ 'opacity-25': !getNumberItemsFromName('Hookshot')  }" />
         </div>
 

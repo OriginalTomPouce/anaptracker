@@ -49,7 +49,7 @@
             <img title="Deku Mask" src="/img/mm/masks/deku_mask.png" :class="{ 'opacity-25': !getNumberItemsFromName('Deku Mask')  }" />
             <img title="Goron Mask" src="/img/mm/masks/goron.png" :class="{ 'opacity-25': !getNumberItemsFromName('Goron Mask')  }" />
             <img title="Zora Mask" src="/img/mm/masks/zora.png" :class="{ 'opacity-25': !getNumberItemsFromName('Zora Mask')  }" />
-            <img title="Fierce Deity's Mask" src="/img/mm/masks/fierce_deity.png" :class="{ 'opacity-25': !getNumberItemsFromName('Fierce Deity\'s Mask')  }" />
+            <img title="Fierce Deity's Mask" src="/img/mm/masks/fierce_deity.png" :class="{ 'opacity-25': !getNumberItemsFromName('Fierce Deity Mask')  }" />
             <img title="Great Fairy Mask" src="/img/mm/masks/fairy_mask.png" :class="{ 'opacity-25': !getNumberItemsFromName('Great Fairy Mask')  }" />
             <img title="Gibdo Mask" src="/img/mm/masks/captains.png" :class="{ 'opacity-25': !getNumberItemsFromName('Captain\'s Hat')  }" />
             <img title="Garo Mask" src="/img/mm/masks/garo_mask.png" :class="{ 'opacity-25': !getNumberItemsFromName('Garo Mask')  }" />

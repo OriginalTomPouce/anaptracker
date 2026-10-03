@@ -46,7 +46,8 @@
         </div>
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
             <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Key Items</div>
-
+            
+            <img v-if="dexsanityTracking()" title="Pokedex" src="/img/pokemon_crystal/items/pokedex.png" :class="{ 'opacity-25': !getNumberItemsFromName('Pokedex')  }" />
             <img v-if="itemfinderRequired()" title="Itemfinder" src="/img/pokemon_crystal/items/itemfinder.png" :class="{ 'opacity-25': !getNumberItemsFromName('Itemfinder')  }" />
             <img v-if="!getNumberItemsFromName('Pokegear')" src="/img/pokemon_crystal/items/pokegear.png" title="Pokegear" class="opacity-25" />
             <img v-else-if="!getNumberItemsFromName('Radio Card')" src="/img/pokemon_crystal/items/pokegear.png" title="Pokegear" />
@@ -59,7 +60,7 @@
             <img title="Basement Key" src="/img/pokemon_crystal/items/basementkey.png" :class="{ 'opacity-25': !getNumberItemsFromName('Basement Key')  }" />
             <img title="Card Key" src="/img/pokemon_crystal/items/cardkey.png" :class="{ 'opacity-25': !getNumberItemsFromName('Card Key')  }" />
             <img v-if="!getNumberItemsFromName('Clear Bell')" title="Clear Bell" src="/img/pokemon_crystal/items/clearbell.png" class="opacity-25" />
-            <img v-else-if="!getNumberItemsFromName('Rainbow Wing')" title="Clear Bell" src="/img/pokemon_crystal/items/clearbell.png"/>
+            <img v-else-if="!getNumberItemsFromName('Rainbow Wing')" title="Clear Bell" src="/img/pokemon_crystal/items/clearbell.png" />
             <img v-else title="Rainbow Wing" src="/img/pokemon_crystal/items/rainbowwing.png" />
             <img v-if="kantoIsOn() && teaIsOn()" title="Tea" src="/img/pokemon_crystal/items/tea.png" :class="{ 'opacity-25': !getNumberItemsFromName('Tea')  }" />
             <img v-if="kantoIsOn()" title="Machine Part" src="/img/pokemon_crystal/items/machinepart.png" :class="{ 'opacity-25': !getNumberItemsFromName('Machine Part')  }" />
@@ -210,6 +211,12 @@ export default {
 
                 return res;
             },
+            dexsanityTracking: function () {
+                if (this.data.slot_data.hasOwnProperty('dexsanity') && (this.data.slot_data.dexsanity > 0 || this.data.slot_data.dexcountsanity_checks > 0) && this.data.slot_data.randomize_pokedex == 2) {
+                    return 1;
+                }
+                return 0;
+            }, 
             itemfinderRequired: function () {
                 if (this.data.slot_data.hasOwnProperty('require_itemfinder')) {
                     return this.data.slot_data.require_itemfinder;

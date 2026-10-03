@@ -212,7 +212,7 @@ export default {
             },
             unownGoal: function () {
                 if (this.data.slot_data.hasOwnProperty('goal')) {
-                    if (this.data.slot_data.goal == 5)
+                    if (this.data.slot_data.goal.includes("Unown Hunt"))
                         return true;
                     return false;
 

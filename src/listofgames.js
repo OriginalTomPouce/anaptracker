@@ -20,11 +20,13 @@ import GDataPokemonEmerald from './components/gamedata/GDataPokemonEmerald.vue';
 import GDataPokemonFRLG from './components/gamedata/GDataPokemonFRLG.vue';
 import GDataPokemonRedBlue from './components/gamedata/GDataPokemonRedBlue.vue';
 import GDataPokemonPlatinum from './components/gamedata/GDataPokemonPlatinum.vue';
+import GDataRefunct from './components/gamedata/GDataRefunct.vue';
 import GDataRiskOfRain2 from './components/gamedata/GDataRiskOfRain2.vue';
 import GDataSkywardSword from './components/gamedata/GDataSkywardSword.vue';
 import GDataShipOfHarkinian from './components/gamedata/GDataShipOfHarkinian.vue';
 import GDataSonicAdventure2Battle from './components/gamedata/GDataSonicAdventure2Battle.vue';
 import GDataMario64 from './components/gamedata/GDataMario64.vue';
+import GDataSpicyMycena64 from './components/gamedata/GDataSpicyMycena64.vue';
 import GDataSpicyMycenaWaffles from './components/gamedata/GDataSpicyMycenaWaffles.vue';
 import GDataSuperMarioWorld from './components/gamedata/GDataSuperMarioWorld.vue';
 import GDataSecretOfEvermore from './components/gamedata/GDataSecretOfEvermore.vue';
@@ -34,7 +36,6 @@ import GDataTBOIRepentance from './components/gamedata/GDataTBOIRepentance.vue';
 import GDataTerraria from './components/gamedata/GDataTerraria.vue';
 import GDataTheMinishCap from './components/gamedata/GDataTheMinishCap.vue';
 import GDataTwilightPrincess from './components/gamedata/GDataTwilightPrincess.vue';
-
 
 var LIST_OF_GAMES = [
     {
@@ -108,7 +109,11 @@ var LIST_OF_GAMES = [
     {
         'name': 'Pokemon Crystal',
         'class': GDataPokemonCrystal
-    }, 
+    },
+    {
+        'name': 'Pokemon Crystal Prerelease',
+        'class': GDataPokemonCrystal
+    },  
     {
         'name': 'Pokemon Emerald',
         'class': GDataPokemonEmerald
@@ -124,6 +129,10 @@ var LIST_OF_GAMES = [
     {
         'name': 'Pokemon Red and Blue',
         'class': GDataPokemonRedBlue
+    },
+    {
+        'name': 'Refunct',
+        'class': GDataRefunct
     },
     {
         'name': 'Risk of Rain 2',
@@ -152,6 +161,10 @@ var LIST_OF_GAMES = [
     {
         'name': 'Super Mario World',
         'class': GDataSuperMarioWorld
+    }, 
+    {
+        'name': 'SM64: Spicy Mycena 64',
+        'class': GDataSpicyMycena64
     }, 
     {
         'name': 'Super Mario 64',

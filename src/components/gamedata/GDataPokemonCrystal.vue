@@ -98,41 +98,10 @@ export default {
                     return [];
                 var res = [];
                 var row_goal = { title: 'Goal', value: null, details: null };
-                var row_badges = { title: 'Badges required', value: null, details: null };
 
-                if (this.data.slot_data.goal == 0) {
-                    row_goal.value = 'Elite 4';
-                    if (this.data.slot_data.elite_four_requirement == 1)
-                        row_badges.title = 'Gyms to vainquish';
-                    row_badges.value = this.data.slot_data.elite_four_count;
-                }
-                else if (this.data.slot_data.goal == 1) {
-                    row_goal.value = 'Red';
-                    if (this.data.slot_data.red_requirement == 1)
-                        row_badges.title = 'Gyms to vainquish';
-                    row_badges.value = this.data.slot_data.red_count;
-                }
-                if (this.data.slot_data.goal == 2) {
-                    row_goal.value = 'Diploma';
-                    row_goal.details = 'Gotta catch\'em all !';
-                }
-                if (this.data.slot_data.goal == 3) {
-                    row_goal.value = 'Rival';
-                }
-                if (this.data.slot_data.goal == 4) {
-                    row_goal.value = 'Team Rocket';
-                    if (this.data.slot_data.radio_tower_requirement == 1)
-                        row_badges.title = 'Gyms to vainquish';
-                    row_badges.value = this.data.radio_tower_count;
-                }
-                if (this.data.slot_data.goal == 5) {
-                    row_goal.value = 'Unown hunt';
-                }
+                row_goal.value = this.data.slot_data.goal.join(', ');
 
                 res.push(row_goal);
-                if (row_badges.value)
-                    res.push(row_badges);
-
 
                 // Areas Locked
 

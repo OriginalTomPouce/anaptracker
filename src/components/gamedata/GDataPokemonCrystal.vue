@@ -211,8 +211,8 @@ export default {
                 return true;
             },
             unownGoal: function () {
-                if (this.data.slot_data.hasOwnProperty('goal')) {
-                    if (this.data.slot_data.goal.contains("Unown Hunt"))
+                if (this.data.slot_data.hasOwnProperty('goal') && Array.isArray(this.data.slot_data.goal)) {
+                    if (this.data.slot_data.goal.includes("Unown Hunt"))
                         return true;
                     return false;
 

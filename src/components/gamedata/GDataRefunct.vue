@@ -7,14 +7,16 @@
             <span v-if="getGoalGrass()" class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Grasses')  }"><img title="Grass" src="/img/refunct/grass.png" />x{{ getNumberItemsFromCategory('Grasses') }} </span> / {{ getGoalGrass() }}</span>
             <span v-else class="mr-2 text-xs font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Grasses')  }"><img title="Grass" src="/img/refunct/grass.png" />x{{ getNumberItemsFromCategory('Grasses') }} </span>
 
-            <span v-if="getClusterGoal()"  class="mr-2 font-bold text-xs font-bold" title="Cluster Goal" :class="{ 'opacity-25': !hasClusterGoal()  }" >C{{ getClusterGoal() }}</span>
+            <span v-if="getClusterGoal()"  class="mr-2 font-bold text-xs font-bold" title="Cluster Goal" :class="{ 'opacity-25': !hasClusterGoal()  }" ><img title="Paintings" src="/img/refunct/cluster_goal.png" /> {{ getClusterGoal() }}</span>
         </div>
 
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
             <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Abilities</div>
 
-            <span v-if="getAvailableMinigames()" class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Minigames')  }"><img title="Minigames" src="/img/refunct/minigames.png" />x{{ getNumberItemsFromCategory('Minigames') }} </span> / {{ getAvailableMinigames() }}</span>
-            <span v-else class="mr-2 text-xs font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Minigames')  }"><img title="Minigames" src="/img/refunct/minigames.png" />x{{ getNumberItemsFromCategory('Minigames') }} </span>
+            <span class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getUnlockedClusters()  }"><img title="Paintings" src="/img/refunct/cluster.png" />x{{ getUnlockedClusters() }} </span></span>
+
+            <span v-if="getAvailableMinigames()" class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Minigames')  }"><img title="Minigames" src="/img/refunct/cluster_game.png" />x{{ getNumberItemsFromCategory('Minigames') }} </span> / {{ getAvailableMinigames() }}</span>
+            <span v-else class="mr-2 text-xs font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Minigames')  }"><img title="Minigames" src="/img/refunct/cluster_game.png" />x{{ getNumberItemsFromCategory('Minigames') }} </span>
 
             <span class="mr-2"></span>
             <img title="Ledge Grap" src="/img/refunct/moves/ledge_grab.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ledge Grab')  }" />
@@ -109,6 +111,9 @@ export default {
                     return this.data.slot_data.required_grass;
                 }
                 return 0;
+            },
+            getUnlockedClusters: function () {
+                return this.getNumberItemsFromCategory('Clusters')
             },
         },
   components: {

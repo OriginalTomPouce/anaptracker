@@ -20,6 +20,7 @@ import GDataPokemonEmerald from './components/gamedata/GDataPokemonEmerald.vue';
 import GDataPokemonFRLG from './components/gamedata/GDataPokemonFRLG.vue';
 import GDataPokemonRedBlue from './components/gamedata/GDataPokemonRedBlue.vue';
 import GDataPokemonPlatinum from './components/gamedata/GDataPokemonPlatinum.vue';
+import GDataRefunct from './components/gamedata/GDataRefunct.vue';
 import GDataRiskOfRain2 from './components/gamedata/GDataRiskOfRain2.vue';
 import GDataSkywardSword from './components/gamedata/GDataSkywardSword.vue';
 import GDataShipOfHarkinian from './components/gamedata/GDataShipOfHarkinian.vue';
@@ -127,6 +128,10 @@ var LIST_OF_GAMES = [
     {
         'name': 'Pokemon Red and Blue',
         'class': GDataPokemonRedBlue
+    },
+    {
+        'name': 'Refunct',
+        'class': GDataRefunct
     },
     {
         'name': 'Risk of Rain 2',

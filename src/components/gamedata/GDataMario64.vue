@@ -30,7 +30,7 @@
 
             <span v-if="moveShuffled()" class="mr-2"></span>
             <img v-if="moveShuffled()" title="Climb" src="/img/sm64/moves/climb.png" :class="{ 'opacity-25': !getNumberItemsFromName('Climb')  }" />
-            <img v-if="moveShuffled()" title="Ledge Grap" src="/img/sm64/moves/ledge_grab.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ledge Grab')  }" />
+            <img v-if="moveShuffled()" title="Ledge Grab" src="/img/sm64/moves/ledge_grab.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ledge Grab')  }" />
             <img v-if="moveShuffled()" title="Ground Pound" src="/img/sm64/moves/ground_pound.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ground Pound')  }" />
             <img v-if="moveShuffled()" title="Triple Jump" src="/img/sm64/moves/triple_jump.png" :class="{ 'opacity-25': !getNumberItemsFromName('Triple Jump')  }" />
             <img v-if="moveShuffled()" title="Long Jump" src="/img/sm64/moves/long_jump.png" :class="{ 'opacity-25': !getNumberItemsFromName('Long Jump')  }" />

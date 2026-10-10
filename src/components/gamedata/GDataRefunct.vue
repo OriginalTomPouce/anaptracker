@@ -19,7 +19,7 @@
             <span v-else class="mr-2 text-xs font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Minigames')  }"><img title="Minigames" src="/img/refunct/cluster_game.png" />x{{ getNumberItemsFromCategory('Minigames') }} </span>
 
             <span class="mr-2"></span>
-            <img title="Ledge Grap" src="/img/refunct/moves/ledge_grab.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ledge Grab')  }" />
+            <img title="Ledge Grab" src="/img/refunct/moves/ledge_grab.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ledge Grab')  }" />
             <img title="Swim" src="/img/refunct/moves/swim.png" :class="{ 'opacity-25': !getNumberItemsFromName('Swim')  }" />
             <img v-if="getNumberItemsFromName('Progressive Wall Jump') > 1" title="Continuous Wall Jump" src="/img/refunct/moves/wall_jump_2.png" />
             <img v-else title="Wall Jump" src="/img/refunct/moves/wall_jump_2.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Wall Jump')  }" />

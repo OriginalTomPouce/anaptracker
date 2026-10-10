@@ -84,7 +84,7 @@
                 <span v-if="$parent.$parent.OPTIONS.show_timer" class="font-bold
                       text-tiny mr-3">{{ get_last_activity() }}</span>
                 <span class="font-normal" v-if="$parent.$parent.OPTIONS.sort_by == 4">
-                    <span class="font-bold">{{ get_total_checks() - get_current_checks() }}</span> left
+                    <span v-if="!$parent.$parent.OPTIONS.row_size" class="font-normal text-tiny mr-2">({{ percent_of_remainings() }}%)</span> <span class="font-bold">{{ get_total_checks() - get_current_checks() }}</span> left
                 </span>
                 <span v-else>
                     <span v-if="!$parent.$parent.OPTIONS.row_size" class="font-normal text-tiny mr-2">({{ percent_completion() }}%)</span><span class="font-bold">{{ get_current_checks() }}</span> / {{ get_total_checks() }}<br /><span v-if="$parent.$parent.OPTIONS.row_size" class="font-normal text-tiny">({{ percent_completion() }}%)</span>
@@ -305,6 +305,12 @@
                 var total_checks = this.get_total_checks();
                 if (total_checks > 0)
                     return Math.round(this.get_current_checks() * 10000 / total_checks) / 100;
+                return 0;
+            },
+            percent_of_remainings: function () {
+                var total_remaining = this.$parent.get_total_checks() - this.$parent.get_current_checks();
+                if (total_remaining > 0)
+                    return Math.round((this.get_total_checks() - this.get_current_checks()) * 1000 / total_remaining) / 10;
                 return 0;
             },
             str_percent_completion: function () {

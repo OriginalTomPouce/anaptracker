@@ -45,7 +45,7 @@ var ANAP_WEBHOSTS = {
         alias: "ionium",
         apurl: "https://mw.ionium.us",
     },
-    "ap.lonlonlabs.dev": {
+    "mw.ionium.us": {
         alias: "ionium",
         apurl: "https://mw.ionium.us",
     },

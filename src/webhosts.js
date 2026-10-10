@@ -41,6 +41,14 @@ var ANAP_WEBHOSTS = {
         alias: "lonlonlabs",
         apurl: "https://ap.lonlonlabs.dev",
     },
+    "ionium": {
+        alias: "ionium",
+        apurl: "https://mw.ionium.us",
+    },
+    "ap.lonlonlabs.dev": {
+        alias: "ionium",
+        apurl: "https://mw.ionium.us",
+    },
 }
 
 export default ANAP_WEBHOSTS;

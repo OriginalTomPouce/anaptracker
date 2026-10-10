@@ -22,6 +22,8 @@
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
             <div v-if="$parent.get_size()" class="text-xs font-normal text-left">Abilities</div>
 
+            <span v-if="paintingRando()" class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getUnlockedPaintings()  }"><img title="Paintings" src="/img/sm64/painting.png" />x{{ getUnlockedPaintings() }} </span></span>
+
             <img title="Wing Cap" src="/img/sm64/blocks/block_red.png" :class="{ 'opacity-25': !getNumberItemsFromName('Wing Cap')  }" />
             <img title="Vanish Cap" src="/img/sm64/blocks/block_blue.png" :class="{ 'opacity-25': !getNumberItemsFromName('Vanish Cap')  }" />
             <img title="Metal Cap" src="/img/sm64/blocks/block_green.png" :class="{ 'opacity-25': !getNumberItemsFromName('Metal Cap')  }" />
@@ -117,7 +119,16 @@ export default {
                     return this.data.slot_data.MoveRandoVec;
                 }
                 return 1;
-            }
+            },
+            paintingRando: function () {
+                if (this.data.slot_data.hasOwnProperty('PaintingRando')) {
+                    return this.data.slot_data.PaintingRando;
+                }
+                return this.getUnlockedPaintings();
+            },
+            getUnlockedPaintings: function() {
+                return this.$parent.getNumberItemsFromGroup(["Painting Unlock CCM", "Painting Unlock DDD", "Painting Unlock LLL", "Painting Unlock SL", "Painting Unlock SSL", "Painting Unlock THI", "Painting Unlock TTC", "Painting Unlock TTM", "Painting Unlock WDW", "Painting Unlock WF"]);
+            },
         },
   components: {
   },

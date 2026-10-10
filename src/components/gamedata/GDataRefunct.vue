@@ -22,7 +22,7 @@
             <img title="Ledge Grab" src="/img/refunct/moves/ledge_grab.png" :class="{ 'opacity-25': !getNumberItemsFromName('Ledge Grab')  }" />
             <img title="Swim" src="/img/refunct/moves/swim.png" :class="{ 'opacity-25': !getNumberItemsFromName('Swim')  }" />
             <img v-if="getNumberItemsFromName('Progressive Wall Jump') > 1" title="Continuous Wall Jump" src="/img/refunct/moves/wall_jump_2.png" />
-            <img v-else title="Wall Jump" src="/img/refunct/moves/wall_jump_2.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Wall Jump')  }" />
+            <img v-else title="Wall Jump" src="/img/refunct/moves/wall_jump.png" :class="{ 'opacity-25': !getNumberItemsFromName('Progressive Wall Jump')  }" />
 
             <span class="mr-2"></span>
             <img title="Green Cubes Bag" src="/img/refunct/blocks/block_green.png" :class="{ 'opacity-25': !getNumberItemsFromName('Green Cubes Bag')  }" />

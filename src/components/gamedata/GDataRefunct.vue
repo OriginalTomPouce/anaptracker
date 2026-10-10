@@ -7,7 +7,7 @@
             <span v-if="getGoalGrass()" class="mr-2 text-xs"><span class="font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Grasses')  }"><img title="Grass" src="/img/refunct/grass.png" />x{{ getNumberItemsFromCategory('Grasses') }} </span> / {{ getGoalGrass() }}</span>
             <span v-else class="mr-2 text-xs font-bold" :class="{ 'opacity-25': !getNumberItemsFromCategory('Grasses')  }"><img title="Grass" src="/img/refunct/grass.png" />x{{ getNumberItemsFromCategory('Grasses') }} </span>
 
-            <span v-if="getClusterGoal()"  class="mr-2 font-bold text-xs font-bold" title="Cluster Goal" :class="{ 'opacity-25': !hasClusterGoal()  }" ><img title="Paintings" src="/img/refunct/cluster_goal.png" /> {{ getClusterGoal() }}</span>
+            <span v-if="getClusterGoal()"  class="mr-2 font-bold text-xs font-bold" title="Cluster Goal" :class="{ 'opacity-25': !hasClusterGoal()  }" ><img title="Paintings" src="/img/refunct/cluster_goal.png" />{{ getClusterGoal() }}</span>
         </div>
 
         <div :class="getImageClass()" class="inline-block bg-stone-100/40 rounded-xs p-[2px] pl-[4px] pb-[4px] mx-2 bg-opacity-25">
